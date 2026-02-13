@@ -1,0 +1,360 @@
+<!DOCTYPE html>  <html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>ResumeCraft AI - Professional Resume Builder & Analyzer</title>  
+    <link rel="preconnect" href="https://fonts.googleapis.com">  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">  
+    <link rel="stylesheet" href="styles.css">  
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📄</text></svg>">  
+</head>  
+<body>  
+    <!-- Navbar -->  
+    <nav class="navbar">  
+        <div class="nav-container">  
+            <div class="nav-logo">  
+                <i class="fas fa-file-alt"></i>  
+                <span>ResumeCraft AI</span>  
+            </div>  
+            <ul class="nav-menu">  
+                <li><a href="#home" class="nav-link active" data-page="home">Home</a></li>  
+                <li><a href="#builder" class="nav-link" data-page="builder">Builder</a></li>  
+                <li><a href="#preview" class="nav-link" data-page="preview">Preview</a></li>  
+                <li><a href="#analyzer" class="nav-link" data-page="analyzer">Analyzer</a></li>  
+                <li><a href="#templates" class="nav-link" data-page="templates">Templates</a></li>  
+            </ul>  
+            <div class="hamburger">  
+                <span></span>  
+                <span></span>  
+                <span></span>  
+            </div>  
+        </div>  
+    </nav>  <!-- Home Section -->  
+<section id="home" class="page active">  
+    <div class="hero">  
+        <div class="hero-content">  
+            <h1 class="hero-title">Build Your Dream Resume in <span class="gradient-text">Minutes</span></h1>  
+            <p class="hero-subtitle">AI-powered resume builder with ATS optimization, live preview, and instant analysis. Land your dream job faster.</p>  
+            <div class="hero-buttons">  
+                <a href="#builder" class="btn btn-primary btn-lg">Start Building <i class="fas fa-arrow-right"></i></a>  
+                <a href="#templates" class="btn btn-outline">Browse Templates</a>  
+            </div>  
+        </div>  
+        <div class="hero-image">  
+            <div class="floating-card">  
+                <i class="fas fa-file-alt"></i>  
+                <span>85% ATS Score</span>  
+            </div>  
+        </div>  
+    </div>  
+
+    <div class="features">  
+        <div class="container">  
+            <h2 class="section-title">Why Choose ResumeCraft AI?</h2>  
+            <div class="features-grid">  
+                <div class="feature-card">  
+                    <div class="feature-icon">  
+                        <i class="fas fa-brain"></i>  
+                    </div>  
+                    <h3>AI Analysis</h3>  
+                    <p>Instant ATS scoring and personalized suggestions to beat applicant tracking systems.</p>  
+                </div>  
+                <div class="feature-card">  
+                    <div class="feature-icon">  
+                        <i class="fas fa-mobile-alt"></i>  
+                    </div>  
+                    <h3>Mobile-First</h3>  
+                    <p>Perfect on all devices with responsive design and touch-friendly interface.</p>  
+                </div>  
+                <div class="feature-card">  
+                    <div class="feature-icon">  
+                        <i class="fas fa-eye"></i>  
+                    </div>  
+                    <h3>Live Preview</h3>  
+                    <p>See your resume update in real-time with 5+ premium templates.</p>  
+                </div>  
+                <div class="feature-card">  
+                    <div class="feature-icon">  
+                        <i class="fas fa-print"></i>  
+                    </div>  
+                    <h3>Print Ready</h3>  
+                    <p>Pixel-perfect print styles optimized for recruiters and interviews.</p>  
+                </div>  
+            </div>  
+        </div>  
+    </div>  
+</section>  
+
+<!-- Builder Section -->  
+<section id="builder" class="page">  
+    <div class="container">  
+        <div class="section-header">  
+            <h2 class="section-title">Resume Builder</h2>  
+            <div class="progress-bar">  
+                <div class="progress-fill" id="progressFill"></div>  
+            </div>  
+        </div>  
+
+        <!-- Step 1: Personal Info -->  
+        <div class="form-step active" data-step="1">  
+            <h3><i class="fas fa-user"></i> Personal Information</h3>  
+            <form class="resume-form">  
+                <div class="form-group">  
+                    <label>Full Name</label>  
+                    <input type="text" id="fullName" required>  
+                </div>  
+                <div class="form-row">  
+                    <div class="form-group">  
+                        <label>Email</label>  
+                        <input type="email" id="email" required>  
+                    </div>  
+                    <div class="form-group">  
+                        <label>Phone</label>  
+                        <input type="tel" id="phone">  
+                    </div>  
+                </div>  
+                <div class="form-row">  
+                    <div class="form-group">  
+                        <label>LinkedIn</label>  
+                        <input type="url" id="linkedin" placeholder="https://linkedin.com/in/yourprofile">  
+                    </div>  
+                    <div class="form-group">  
+                        <label>Location</label>  
+                        <input type="text" id="location" placeholder="City, State">  
+                    </div>  
+                </div>  
+            </form>  
+            <div class="step-buttons">  
+                <button class="btn btn-primary" onclick="nextStep(2)">Next <i class="fas fa-arrow-right"></i></button>  
+            </div>  
+        </div>  
+
+        <!-- Step 2: Education -->  
+        <div class="form-step" data-step="2">  
+            <h3><i class="fas fa-graduation-cap"></i> Education</h3>  
+            <div id="educationEntries">  
+                <div class="education-entry">  
+                    <div class="form-row">  
+                        <div class="form-group">  
+                            <label>Degree</label>  
+                            <input type="text" class="edu-degree" placeholder="B.Tech Computer Science">  
+                        </div>  
+                        <div class="form-group">  
+                            <label>University</label>  
+                            <input type="text" class="edu-university" placeholder="IIT Delhi">  
+                        </div>  
+                    </div>  
+                    <div class="form-row">  
+                        <div class="form-group">  
+                            <label>Years</label>  
+                            <input type="text" class="edu-years" placeholder="2020 - 2024">  
+                        </div>  
+                        <div class="form-group">  
+                            <label>GPA/CGPA</label>  
+                            <input type="text" class="edu-gpa" placeholder="8.5/10">  
+                        </div>  
+                    </div>  
+                </div>  
+            </div>  
+            <button type="button" class="btn btn-outline btn-sm" onclick="addEducation()">+ Add Education</button>  
+            <div class="step-buttons">  
+                <button class="btn btn-outline" onclick="prevStep(1)"><i class="fas fa-arrow-left"></i> Back</button>  
+                <button class="btn btn-primary" onclick="nextStep(3)">Next</button>  
+            </div>  
+        </div>  
+
+        <!-- Step 3: Experience -->  
+        <div class="form-step" data-step="3">  
+            <h3><i class="fas fa-briefcase"></i> Work Experience</h3>  
+            <div id="experienceEntries">  
+                <div class="experience-entry">  
+                    <div class="form-group">  
+                        <label>Job Title</label>  
+                        <input type="text" class="exp-title" placeholder="Software Engineer Intern">  
+                    </div>  
+                    <div class="form-row">  
+                        <div class="form-group">  
+                            <label>Company</label>  
+                            <input type="text" class="exp-company" placeholder="Google">  
+                        </div>  
+                        <div class="form-group">  
+                            <label>Duration</label>  
+                            <input type="text" class="exp-duration" placeholder="Jun 2023 - Aug 2023">  
+                        </div>  
+                    </div>  
+                    <textarea class="exp-description" placeholder="Describe your responsibilities and achievements..."></textarea>  
+                </div>  
+            </div>  
+            <button type="button" class="btn btn-outline btn-sm" onclick="addExperience()">+ Add Experience</button>  
+            <div class="step-builder">  
+                <button class="btn btn-outline" onclick="prevStep(2)">Back</button>  
+                <button class="btn btn-primary" onclick="nextStep(4)">Next</button>  
+            </div>  
+        </div>  
+
+        <!-- Step 4: Skills -->  
+        <div class="form-step" data-step="4">  
+            <h3><i class="fas fa-tools"></i> Skills & Projects</h3>  
+            <div class="form-group">  
+                <label>Skills (comma separated)</label>  
+                <input type="text" id="skills" placeholder="JavaScript, React, Python, AWS, Docker">  
+            </div>  
+            <div class="form-group">  
+                <label>Key Projects</label>  
+                <textarea id="projects" placeholder="Project 1: Description...&#10;Project 2: Description..."></textarea>  
+            </div>  
+            <div class="step-buttons">  
+                <button class="btn btn-outline" onclick="prevStep(3)">Back</button>  
+                <button class="btn btn-primary" onclick="nextStep(5)">Review & Preview</button>  
+            </div>  
+        </div>  
+
+        <!-- Step 5: Review -->  
+        <div class="form-step" data-step="5">  
+            <h3><i class="fas fa-check-circle"></i> Review & Save</h3>  
+            <div class="review-summary">  
+                <p><strong>All information saved successfully!</strong></p>  
+                <p>Click Preview to see your resume or Analyze for AI insights.</p>  
+            </div>  
+            <div class="step-buttons">  
+                <button class="btn btn-outline" onclick="prevStep(4)">Edit</button>  
+                <a href="#preview" class="btn btn-primary">View Preview</a>  
+                <a href="#analyzer" class="btn btn-success">Analyze Resume</a>  
+            </div>  
+        </div>  
+    </div>  
+</section>  
+
+<!-- Preview Section -->  
+<section id="preview" class="page">  
+    <div class="container">  
+        <div class="section-header">  
+            <h2>Live Resume Preview</h2>  
+            <div class="template-selector">  
+                <button class="template-btn active" data-template="modern">Modern</button>  
+                <button class="template-btn" data-template="classic">Classic</button>  
+                <button class="template-btn" data-template="creative">Creative</button>  
+            </div>  
+        </div>  
+        <div class="preview-container">  
+            <div class="resume-preview" id="resumePreview">  
+                <!-- Dynamic resume content -->  
+            </div>  
+            <div class="preview-actions">  
+                <button class="btn btn-success" onclick="printResume()"><i class="fas fa-print"></i> Print/Download PDF</button>  
+                <a href="#analyzer" class="btn btn-primary">Analyze Resume</a>  
+            </div>  
+        </div>  
+    </div>  
+</section>  
+
+<!-- Analyzer Section -->  
+<section id="analyzer" class="page">  
+    <div class="container">  
+        <div class="section-header">  
+            <h2>AI Resume Analyzer</h2>  
+            <p class="section-subtitle">Get instant feedback and optimization suggestions</p>  
+        </div>  
+        <div class="analyzer-grid">  
+            <div class="score-card overall-score">  
+                <div class="score-header">  
+                    <h3>Overall Score</h3>  
+                    <div class="score-value" id="overallScore">85</div>  
+                    <div class="score-label">Excellent</div>  
+                </div>  
+            </div>  
+            <div class="score-card">  
+                <div class="score-header">  
+                    <h3>ATS Score</h3>  
+                    <div class="score-value" id="atsScore">92</div>  
+                    <div class="score-label">Excellent</div>  
+                </div>  
+                <p>Highly compatible with Applicant Tracking Systems</p>  
+            </div>  
+            <div class="score-card">  
+                <div class="score-header">  
+                    <h3>Skills Match</h3>  
+                    <div class="score-value" id="skillsScore">78</div>  
+                    <div class="score-label">Good</div>  
+                </div>  
+                <p>IT Job Requirements Match</p>  
+            </div>  
+            <div class="score-card">  
+                <div class="score-header">  
+                    <h3>Readability</h3>  
+                    <div class="score-value" id="readabilityScore">89</div>  
+                    <div class="score-label">Excellent</div>  
+                </div>  
+                <p>Flesch Reading Ease Score</p>  
+            </div>  
+        </div>  
+
+        <div class="suggestions">  
+            <h3>AI Suggestions</h3>  
+            <div class="suggestion-list">  
+                <div class="suggestion-item success">  
+                    <i class="fas fa-check"></i>  
+                    <span>Excellent use of action verbs and quantifiable achievements</span>  
+                </div>  
+                <div class="suggestion-item warning">  
+                    <i class="fas fa-exclamation-triangle"></i>  
+                    <span>Add specific metrics (e.g., "increased sales by 30%") to 2 more bullets</span>  
+                </div>  
+                <div class="suggestion-item">  
+                    <i class="fas fa-lightbulb"></i>  
+                    <span>Include keywords: "Agile", "CI/CD", "microservices" for senior roles</span>  
+                </div>  
+            </div>  
+        </div>  
+    </div>  
+</section>  
+
+<!-- Templates Section -->  
+<section id="templates" class="page">  
+    <div class="container">  
+        <div class="section-header">  
+            <h2>Premium Templates</h2>  
+            <p>Choose your perfect style</p>  
+        </div>  
+        <div class="templates-grid">  
+            <div class="template-card" data-template="modern">  
+                <div class="template-preview">  
+                    <i class="fas fa-file-alt"></i>  
+                </div>  
+                <h3>Modern</h3>  
+                <p>Clean, professional design for tech roles</p>  
+                <button class="btn btn-primary btn-sm">Select</button>  
+            </div>  
+            <div class="template-card" data-template="classic">  
+                <div class="template-preview">  
+                    <i class="fas fa-file-alt"></i>  
+                </div>  
+                <h3>Classic</h3>  
+                <p>Traditional format for corporate positions</p>  
+                <button class="btn btn-primary btn-sm">Select</button>  
+            </div>  
+            <div class="template-card" data-template="creative">  
+                <div class="template-preview">  
+                    <i class="fas fa-file-alt"></i>  
+                </div>  
+                <h3>Creative</h3>  
+                <p>Stand out for design/marketing roles</p>  
+                <button class="btn btn-primary btn-sm">Select</button>  
+            </div>  
+        </div>  
+    </div>  
+</section>  
+
+<!-- Footer -->  
+<footer>  
+    <div class="container">  
+        <p>&copy; 2026 ResumeCraft AI. Built with ❤️ for developers.</p>  
+    </div>  
+</footer>  
+
+<script src="script.js"></script>
+
+</body>  
+</html>  
